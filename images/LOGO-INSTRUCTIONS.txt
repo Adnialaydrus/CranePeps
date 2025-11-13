@@ -1,0 +1,46 @@
+================================================
+  INSTRUKSI: Cara Menambahkan Logo Website
+================================================
+
+Anda sudah memberikan logo di gambar kedua yang di-upload.
+Logo tersebut adalah gambar crane kuning dengan teks "Sewa CranePeps".
+
+CARA SIMPAN LOGO:
+-----------------
+
+OPSI 1 - Dari File Gambar Asli:
+  1. Buka file gambar logo asli Anda
+  2. Save As → Format: PNG
+  3. Nama file: logo.png (huruf kecil semua)
+  4. Simpan di folder: website-pp/images/
+
+OPSI 2 - Dari Screenshot/Gambar yang Anda Upload:
+  1. Buka gambar logo (gambar kedua yang Anda kirim)
+  2. Crop bagian logo saja (crane + teks "Sewa CranePeps")
+  3. Save As → Format: PNG dengan background transparan
+  4. Nama file: logo.png
+  5. Simpan di folder ini (images/)
+
+OPSI 3 - Gunakan Logo Asli Perusahaan:
+  1. Ambil file logo resmi perusahaan
+  2. Convert ke PNG jika perlu
+  3. Nama file: logo.png
+  4. Simpan di folder ini
+
+SPESIFIKASI LOGO:
+-----------------
+- Format: PNG (dengan background transparan lebih baik)
+- Ukuran: Lebar 200-400px (tinggi proporsional)
+- File size: < 100KB (agar website cepat)
+- Nama file: logo.png (HARUS persis seperti ini)
+
+LOKASI FILE:
+-----------
+website-pp/images/logo.png
+
+Setelah logo ditambahkan, refresh browser (Ctrl+F5) untuk melihat hasilnya.
+
+================================================
+
+
+
