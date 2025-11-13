@@ -255,6 +255,7 @@ body {
 .carousel-wrapper {
     overflow: hidden;
     margin: 0 auto;
+    min-height: 600px;
 }
 
 .carousel-track {
@@ -879,6 +880,10 @@ body {
         padding: 0 50px;
     }
 
+    .carousel-wrapper {
+        min-height: 650px;
+    }
+
     .product-card {
         flex: 0 0 calc(50% - 15px);
         min-width: calc(50% - 15px);
@@ -976,6 +981,10 @@ body {
     /* Carousel Mobile Styles */
     .carousel-container {
         padding: 0 40px;
+    }
+
+    .carousel-wrapper {
+        min-height: 750px;
     }
 
     .product-card {

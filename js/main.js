@@ -149,15 +149,20 @@ class ProductCarousel {
         this.cloneCards();
         this.createDots();
         
-        // Wait for next frame to ensure DOM is updated
+        // Wait for layout and images to be ready
+        // Use multiple frames to ensure everything is calculated
         requestAnimationFrame(() => {
-            this.updateCarousel(false); // Set initial position without animation
+            requestAnimationFrame(() => {
+                this.updateCarousel(false); // Set initial position without animation
+            });
         });
         
         this.attachEventListeners();
         
-        // Auto-play carousel
-        this.startAutoPlay();
+        // Start auto-play after a short delay to ensure carousel is positioned
+        setTimeout(() => {
+            this.startAutoPlay();
+        }, 500);
         
         // Handle window resize
         let resizeTimeout;
@@ -234,6 +239,16 @@ class ProductCarousel {
         }
         
         const cardWidth = this.cards[0].offsetWidth;
+        
+        // If card width is 0, layout isn't ready yet - retry
+        if (cardWidth === 0) {
+            console.warn('Card width is 0, retrying...');
+            requestAnimationFrame(() => {
+                this.updateCarousel(animate);
+            });
+            return;
+        }
+        
         const gap = 30;
         const offset = -(this.currentIndex * (cardWidth + gap));
         
@@ -361,11 +376,17 @@ class ProductCarousel {
     }
 }
 
-// Initialize carousel when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
+// Initialize carousel when everything is fully loaded (including images)
+function initCarousel() {
+    // Wait a bit for layout to stabilize
+    setTimeout(() => {
         new ProductCarousel();
-    });
+    }, 100);
+}
+
+// Use window load event to ensure images are loaded
+if (document.readyState === 'complete') {
+    initCarousel();
 } else {
-    new ProductCarousel();
+    window.addEventListener('load', initCarousel);
 }
